@@ -1,8 +1,8 @@
-function addValue(num1, num2){
-    'use strict'
-    sum = num1 + num2;
-    return sum;
+var color = 'blue';
+
+function getColor(color) {
+    var color = 'red';
+    return color;
 }
 
-addValue(10, 20);
-console.log(sum);
+console.log(getColor('argument'));
