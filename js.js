@@ -1,8 +1,25 @@
-var color = 'blue';
+var person1 = {
+    toString: function(){
+        return 'Jimmy';
+    },
 
-function getColor(color) {
-    var color = 'red';
-    return color;
-}
+    toLocaleString: function(){
+        return 'Jimmy';
+    }
+};
 
-console.log(getColor('argument'));
+var person2 = {
+    toString: function(){
+        return 'Li';
+    },
+
+    toLocaleString: function(){
+        return '李';
+    }
+};
+
+var person = [person1, person2];
+console.log(person);
+console.log(person.toString());
+console.log(person.valueOf());
+console.log(person.toLocaleString());
