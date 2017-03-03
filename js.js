@@ -1,25 +1,5 @@
-var person1 = {
-    toString: function(){
-        return 'Jimmy';
-    },
+var numArray = [0, 1, 2, 5, 6, 8, 9, 12, 21];
 
-    toLocaleString: function(){
-        return 'Jimmy';
-    }
-};
-
-var person2 = {
-    toString: function(){
-        return 'Li';
-    },
-
-    toLocaleString: function(){
-        return '李';
-    }
-};
-
-var person = [person1, person2];
-console.log(person);
-console.log(person.toString());
-console.log(person.valueOf());
-console.log(person.toLocaleString());
+function compare(value1, value2) {
+    return value1 - value2;    
+}
