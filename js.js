@@ -1,7 +1,14 @@
-var me = [1, 2, 3, 4, 5, 6];
+function search(objString, searchChar){
+    var postions = new Array();
+    var pos  = objString.indexOf(searchChar) ;
 
-var sum = me.reduce(function (pre, cur, index, arry) {
-    return pre + cur;
-}, 21);
+    while(pos > -1){
+        postions.push(pos);
+        pos = objString.indexOf(searchChar, pos + 1);
+    }
 
-console.log(sum);
+    console.log(postions);
+}
+
+search('Hello World! jimmy only.', 'o');
+
