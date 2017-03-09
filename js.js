@@ -1,14 +1,17 @@
-function search(objString, searchChar){
-    var postions = new Array();
-    var pos  = objString.indexOf(searchChar) ;
 
-    while(pos > -1){
-        postions.push(pos);
-        pos = objString.indexOf(searchChar, pos + 1);
+
+function hasPlugin(name) {
+    name = name.toLowerCase();
+
+    for (var index = 0; index < navigator.plugins.length; index++) {
+        var plugin = navigator.plugins[index];
+        if (plugin.name.toLowerCase().indexOf(name) > -1) {
+            return true
+        }
+
     }
 
-    console.log(postions);
+    return false;
 }
 
-search('Hello World! jimmy only.', 'o');
 
