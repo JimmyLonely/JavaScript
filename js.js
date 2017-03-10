@@ -1,17 +1,28 @@
 
 
-function hasPlugin(name) {
-    name = name.toLowerCase();
+var hasDontEnumQuirk = function () {
+    var o = { toString: function () { } };
 
-    for (var index = 0; index < navigator.plugins.length; index++) {
-        var plugin = navigator.plugins[index];
-        if (plugin.name.toLowerCase().indexOf(name) > -1) {
-            return true
+    for (var prop in o) {
+        if (prop == 'toString') {
+            return false;
         }
-
     }
 
-    return false;
-}
+    return true;
+}();
 
+
+var hasEnumShadowQuirk = function () {
+    var o = { toString: function () { } };
+
+    var count = 0;
+    for (var prop in o) {
+        if (prop == 'toString') {
+            count++;
+        }
+    }
+
+    return (count > 1);
+}();
 
