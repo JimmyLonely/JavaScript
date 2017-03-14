@@ -5,19 +5,33 @@
 </head>
 
 <body>
-    <p>This is a demo for JavaScript.</p>
-    <script src="js.js">
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
 
-    </script>
+    <h2 id="head-2">Hello word!</h2>
+
+    <div id="cdata">
+        <! [CDATA[This is some content.]] >
+    </div>
+
     <script>
-        function sayHello() {
-            alert('<\/script>');
+        function loadScript(url){
+            var script = document.createElement('script');
+            script.type='text/javascript';
+            script.src=url;
+            document.body.appendChild(script);
+        }
+
+        function runScript(text){
+            var script = document.createElement('script');
+            script.type='text/javascript';
+            script.text=text;
+            document.body.appendChild(script);
         }
     </script>
-
-    <noscript>
-        JavaScript is disabled.
-    </noscript>
 </body>
 
 </html>
