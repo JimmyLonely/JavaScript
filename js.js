@@ -1,18 +1,16 @@
 
-function matchesSelector(element, selector) {
-    if (element.matchesSelector) {
-        return element.matchesSelector(selector);
-    } else if (element.webkitMatchesSelector) {
-        return element.webkitMatchesSelector(selector);
-    } else if (element.msMatchesSelector) {
-        return element.msMatchesSelector(selector);
-    }
-    else if (element.mozMatchesSelector) {
-        return element.mozMatchesSelector(selector);
-    }
-    else {
-        throw new Error('Not supported.');
-    }
-}
+function traversalStyle(id) {
+    id = id.indexOf('#') == 0 ? id : '#' + id;
+    var element = document.querySelector(id);
 
-console.log(matchesSelector(document.body, 'body'));
+    var prop,
+        value,
+        i,
+        len = element.style.length;
+
+    for (i = 0, len = element.style.length; i < len; i++) {
+        prop = element.style[i];
+        value = element.style.getPropertyValue(prop);
+        console.log(prop + ': ' + value);
+    }
+};
