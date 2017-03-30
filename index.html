@@ -5,70 +5,14 @@
 </head>
 
 <body>
-    <ul id="myList">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
+    <form method="post">
+        <input type="text" name="username" value="">
+        <input type="button" id="button" value="Echo Username" onclick="alert('hello')">
+    </form>
 
-    <h2 id="head-2">Hello word!</h2>
-
-    <div id="cdata">
-        <! [CDATA[This is some content.]] >
-    </div>
-
+    <script src="eventUtil.js" /> </script>
     <script>
-        function loadScript(url) {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = url;
-            document.body.appendChild(script);
-        }
-
-        function runScript(text) {
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            try {
-                script.appendChild(document.createTextNode(text));
-            } catch (error) {
-                // For IE8 quirk
-                script.text = text;
-            }
-
-            document.body.appendChild(script);
-        }
-
-        function loadCSS(url) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = url;
-
-            document.head.appendChild(link);
-        }
-
-        function runCSS(css) {
-            var style = document.createElement('style');
-            style.type = 'text/css';
-            try {
-                style.appendChild(document.createTextNode(css));
-            } catch (error) {
-                // For IE8 quirk
-                style.styleSheet.cssText = css;
-            }
-
-            try {
-                document.head.appendChild(style);
-            } catch (error) {
-                // For IE8 quirk
-                var head = document.getElementsByTagName('head')[0];
-                head.appendChild(style);
-            }
-        }
-
-        var css = '#head-2{\
-                    color: red;\
-                }';
+        var btn = document.querySelector('#button');
     </script>
 </body>
 
