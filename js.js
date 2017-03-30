@@ -1,16 +1,36 @@
 
-function traversalStyle(id) {
-    id = id.indexOf('#') == 0 ? id : '#' + id;
-    var element = document.querySelector(id);
 
-    var prop,
-        value,
-        i,
-        len = element.style.length;
+var btn = document.querySelector('button');
 
-    for (i = 0, len = element.style.length; i < len; i++) {
-        prop = element.style[i];
-        value = element.style.getPropertyValue(prop);
-        console.log(prop + ': ' + value);
-    }
-};
+window.addEventListener('load', function (event) {
+    var image = document.createElement('img');
+
+    document.body.appendChild(image);
+    image.src = '/asset/img/png.png';
+    image.addEventListener('load', function (event) {
+        console.log(event.target);
+    }, false);
+}, false);
+
+window.addEventListener('load', function (event) {
+    var js = document.createElement('script');
+    js.addEventListener('load', function (event) {
+        console.log(event.target);
+    }, false);
+
+    document.body.appendChild(js);
+    js.src = '/asset/js/example.js';
+}, false);
+
+window.addEventListener('load', function (event) {
+    var link = document.createElement('link');
+    link.type = "text/css";
+    link.rel = "stylesheet";
+
+    link.addEventListener('load', function (event) {
+        console.log(event.target);
+    }, false);
+
+    document.querySelector('head').appendChild(link);
+    link.href = '/asset/css/example.css';
+}, false);
