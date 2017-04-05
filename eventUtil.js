@@ -18,5 +18,30 @@ var eventUtil = {
         } else {
             element['on' + type] = null;
         }
+    },
+    getEvent: function (event) {
+        // for IE8
+        return event ? event : window.event;
+    },
+    getTarget: function (event) {
+        // for IE8
+        return event.target || event.srcElement;
+    },
+    preventDefault: function (event) {
+        if (event.preventDefault) {
+            event.preventDefault();
+        } else {
+
+            // for IE8
+            event.returnValue = false;
+        }
+    },
+    stopPropagation: function (event) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            // for IE8
+            event.cancelBubble = true;
+        }
     }
 };
