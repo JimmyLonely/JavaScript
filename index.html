@@ -6,10 +6,17 @@
 </head>
 
 <body>
-    <div id="my-div">
-        <input type="text" id="text" />
-        <input type="button" id="button" value='OK' />
-    </div>
+    <form id="fm" name='form1' action='refreshProfileInfo' method="POST">
+        <input value="" required>
+        <input type="email">
+        <input type="number" min='1' max='200' step="5">
+
+        <input type="text" pattern="\d+">
+
+        <input type="submit" value="Submit">
+
+    </form>
+
 
     <script src="eventUtil.js"></script>
     <script src="js.js"></script>
