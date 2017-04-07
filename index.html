@@ -1,23 +1,13 @@
-<html>
+<html class="no-js">
 
 <head>
     <title>JavaScript Demo</title>
     <link rel="stylesheet" type="text/css" href="css.css" />
+    <script src="/lib/modernizr.min.js"></script>
 </head>
 
 <body>
-    <form id="fm" name='form1' action='refreshProfileInfo' method="POST">
-        <input value="" required>
-        <input type="email">
-        <input type="number" min='1' max='200' step="5">
-
-        <input type="text" pattern="\d+">
-
-        <input type="submit" value="Submit">
-
-    </form>
-
-
+    <canvas id="draw">This is a draw canvas. </canvas>
     <script src="eventUtil.js"></script>
     <script src="js.js"></script>
 </body>
