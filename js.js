@@ -1,11 +1,17 @@
 
-var div = document.getElementById('div');
-var btn = document.getElementById('button');
-var text = document.getElementById('text');
 
-eventUtil.addHandler(btn, 'custom', function (event) {
-    console.log('custom.');
-})
+var form = document.querySelector('div');
+var btn = document.querySelector('#btn');
+
+btn.addEventListener('click', function (event) {
+    alert('btn is click');
+}, false);
 
 
-//var event = document.createEvent('MouseEvent');
+form.addEventListener('click', function (event) {
+    console.log('form  is clicked');
+    if (event.target != btn) {
+        btn.click();
+        event.preventDefault();
+    }
+}, true);

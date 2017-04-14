@@ -1,3 +1,17 @@
-#head-2{
-    color: red;
+html, body {
+    font-family: 'Helvetica Neue', 'TeX-Gyre-Heros', Helvetica, Arial, sans-serif;
+    height: 100%;
+    cursor: auto;
+}
+
+input{
+    font-family:  "Helvetica Neue", TeX-Gyre-Heros, Helvetica, Arial, sans-serif;
+    
+    display: block;
+}
+
+form, div{
+    min-height: 400px;
+    min-width: 400px;
+    border: 2px solid blue;
 }
