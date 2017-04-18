@@ -1,17 +1,45 @@
 
 
-var form = document.querySelector('div');
-var btn = document.querySelector('#btn');
+function customerXHR() {
 
-btn.addEventListener('click', function (event) {
-    alert('btn is click');
-}, false);
+};
 
 
-form.addEventListener('click', function (event) {
-    console.log('form  is clicked');
-    if (event.target != btn) {
-        btn.click();
-        event.preventDefault();
+function createXHR() {
+    if (typeof XMLHttpRequest != 'undefined') {
+        return new XMLHttpRequest();
+    } else {
+        return new customerXHR();
     }
-}, true);
+}
+
+// overwrite function
+function createXHRLazy() {
+    if (typeof XMLHttpRequest != 'undefined') {
+        createXHRLazyFunction = function () {
+            return new XMLHttpRequest();
+        }
+    } else {
+        createXHRLazyFunction = function () {
+            return new customerXHR();
+        }
+    }
+
+    return createXHRLazyFunction();
+}
+
+
+// closure
+var createXHRClosure = (function () {
+    if (typeof XMLHttpRequest != 'undefined') {
+        return function () {
+            return new XMLHttpRequest();
+        }
+    } else {
+        return function () {
+            return new customerXHR();
+        }
+    }
+})();
+
+
