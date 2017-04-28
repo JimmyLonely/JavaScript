@@ -6,12 +6,19 @@ html, body {
 
 input{
     font-family:  "Helvetica Neue", TeX-Gyre-Heros, Helvetica, Arial, sans-serif;
-    
     display: block;
 }
 
 form, div{
-    min-height: 400px;
-    min-width: 400px;
+    width: 20px;
+    height: 20px;
     border: 2px solid blue;
+}
+
+
+div{
+    position: fixed;
+    width: 20px;
+    height: auto;
+    height: auto;
 }

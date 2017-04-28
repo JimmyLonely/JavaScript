@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title> frame</title>
+</head>
+
+<body>
+    <div>
+        <h2> This is iframe. </h2>
+    </div>
+    <script>
+        window.addEventListener('message', function (event) {
+            console.log(event.data);
+            event.source.postMessage('Recived!', '*');
+        }, false);
+    </script>
+</body>
+
+</html>
